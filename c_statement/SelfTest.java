@@ -72,7 +72,7 @@ public class SelfTest {
 		
 		if(i <= 3){
 			System.out.println("결과 " + i + "개 : " + "탄수화물 중독에 걸릴 위험이 있는 정도.");
-		} else if(i >= 3 && i <= 6){
+		} else if(i <= 6){
 			System.out.println("결과 " + i + "개 : " + "탄수화물 중독 위험");
 		} else {
 			System.out.println("결과 " + i + "개 : " + "탄수화물 중독으로 볼 수 있음");
