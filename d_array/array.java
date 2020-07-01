@@ -109,13 +109,13 @@ public class array {
 //			System.out.print(i + ": " + count +"개" + "     ");
 //		
 		//위 문제의 최소값, 최대값, 반복횟수를 입력받아 각 숫자가 생성된 횟수를 출력해주세요.
-//		Scanner sc = new Scanner(System.in);
-//		System.out.println("최대값을 입력해주세요>");
-//		int max1 = Integer.parseInt(sc.nextLine());
-//		System.out.println("최소값을 입력해주세요>");
-//		int min1 = Integer.parseInt(sc.nextLine());
-//		System.out.println("반복횟수를 입력하세요>");
-//		int times = Integer.parseInt(sc.nextLine());
+		Scanner sc = new Scanner(System.in);
+		System.out.println("최대값을 입력해주세요>");
+		int max1 = Integer.parseInt(sc.nextLine());
+		System.out.println("최소값을 입력해주세요>");
+		int min1 = Integer.parseInt(sc.nextLine());
+		System.out.println("반복횟수를 입력하세요>");
+		int times = Integer.parseInt(sc.nextLine());
 //		
 //		int[] ranArray = new int[500];
 //		for(int i = 0; i < ranArray.length; i++){
@@ -133,14 +133,23 @@ public class array {
 //			System.out.print(i + ": " + count +"개" + "     ");
 //		}
 		
-		int[] counts = new int[10];
-		for(int i = 1; i <= 500; i++){
-			int rannum = (int)(Math.random()* 10) +1;
-			counts[rannum - 1]++;
-		}
-		 System.out.println(Arrays.toString(counts));
+//		int[] counts = new int[10];
+//		for(int i = 1; i <= 500; i++){
+//			int rannum = (int)(Math.random()* 10) +1;
+//			counts[rannum - 1]++;
+//		}
+//		 System.out.println(Arrays.toString(counts));
 			
-	
+		int[] counts = new int[max1-min1+1];
+		for(int i = 1; i <= times; i++){
+			int rannum = (int)(Math.random() * (max1-min1 +1)) + min1;
+			counts[rannum - min1]++;
+		}
+		System.out.println(Arrays.toString(counts));
+		
+		for(int i = 0; i < (max1-min1+1); i++){
+			System.out.print((min1+i) + ":" + counts[i] + "회  ");
+		}
 	}
 
 }
