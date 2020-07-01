@@ -42,11 +42,12 @@ public class Baseball {
 			b = (int)(Math.random() * 9 + 1);
 			c = (int)(Math.random() * 9 + 1);
 		} while(a == b || a == c || b == c);
-		System.out.println("정답 : " + a + b + c);
 		
 		Scanner sc = new Scanner(System.in);
 
-		outer :do{
+		// 갯수제한
+		int count = 0;
+		while(true){
 			System.out.println("세자리 숫자를 고르시오>");
 			input = Integer.parseInt(sc.nextLine());
 			aI = input / 100;
@@ -60,60 +61,27 @@ public class Baseball {
 			} else if(aI == bI || aI == cI || bI == cI){
 				 System.out.println("중복된 숫자 입력!!");
 			} else {
-				if(aI == a){
-					str++;
-				}
-				if(aI == b || aI == c){
-					bal++;
-				}
-				if(aI != a && aI != b && aI != c){
-					out++;
-				}
-				if(bI == b){
-					str++;
-				}
-				if(bI == a || bI == c){
-					bal++;
-				}
-				if(bI != a && bI != b && bI !=c){
-					out++;
-				}
-				if(cI == c){
-					str++;
-				}
-				if(cI == a || cI == b){
-					bal++;
-				}
-				if(cI != a && cI != b && cI !=c){
-					out++;
-				}
-				if(a == aI && c == cI && b == bI){
-					
-				} else {
-					System.out.println(str + "S " + bal + "B " + out + "O ");
+				if(aI == a) str++;
+				if(bI == b) str++;
+				if(cI == c) str++;
+				
+				if(aI == b || aI == c) bal++;
+				if(bI == a || bI == c) bal++;
+				if(cI == a || cI == b) bal++;			
+				
+				out = 3 - str - bal;
+				count++;
+				
+				System.out.println(count + "차 시도" + str + "S " + bal + "B " + out + "O ");
+				System.out.println("----------------------------");
+				if(str ==3){
+					System.out.println("정답입니다!!");
+					break;
 				}
 			}
-			
-		} while(a != aI || b != bI || c != cI);
-		System.out.println("정답!");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		}						
 	}
-
 }
-
-
-
-
 
 
 
