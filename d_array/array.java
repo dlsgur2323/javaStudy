@@ -143,12 +143,10 @@ public class array {
 		int[] counts = new int[max1-min1+1];
 		for(int i = 1; i <= times; i++){
 			int rannum = (int)(Math.random() * (max1-min1 +1)) + min1;
-			counts[rannum - min1]++;
+			counts[rannum - min1]++;  
 		}
-		System.out.println(Arrays.toString(counts));
-		
-		for(int i = 0; i < (max1-min1+1); i++){
-			System.out.print((min1+i) + ":" + counts[i] + "회  ");
+		for(int i = 0; i < counts.length; i++){
+			System.out.print((i+min1) + ":" + counts[i] + "회  ");
 		}
 	}
 
