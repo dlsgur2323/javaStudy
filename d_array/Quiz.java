@@ -29,27 +29,27 @@ public class Quiz {
 			temp[count++] = arr[i];
 			}
 		}
-		int[] result = new int[count];
-		for(int i = 0; i < count; i++){
-			result[i] = temp[i];
+		arr = new int[count];
+		for(int i = 0; i < arr.length; i++){
+			arr[i] = temp[i];
 		}
 		System.out.println(ran);
-		System.out.println(Arrays.toString(result));
+		System.out.println(Arrays.toString(arr));
 		
 		int dummy = 0;
 		boolean changed = false;
 		for(int j = 1; j < count -1; j++){
 			for(int i = 0; i < count - j; i++){
-				if(result[i] > result[i+1]){
-					dummy = result[i+1];
-					result[i+1] = result[i];
-					result[i] = dummy;
+				if(arr[i] > arr[i+1]){
+					dummy = arr[i+1];
+					arr[i+1] = arr[i];
+					arr[i] = dummy;
 					changed = true;
 				}
 			}
 			if(!changed) break;
 		}
-		System.out.println(Arrays.toString(result));
+		System.out.println(Arrays.toString(arr));
 	}
 
 	private static void quiz3() {

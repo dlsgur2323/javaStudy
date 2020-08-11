@@ -101,7 +101,7 @@ public class ArithmeticOperator {
 		result4 /= 123456;
 		result4 -= 654321;
 		result4 %= 123456;
-		System.out.println(result4);
+		System.out.println(result4 + "이거임");
 		
 		//3개의 int형 변수를 선언 및 초기화 후 합계와 평균을 출력해주세요.
 		int i1 = 11;
